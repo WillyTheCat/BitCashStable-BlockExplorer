@@ -1,0 +1,5 @@
+echo "start2"
+cd ~/explorer
+ereis forever
+./usr/local/bin/forever list
+forever start -c "npm start" ./

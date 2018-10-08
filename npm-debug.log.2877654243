@@ -1,0 +1,28 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'start', './' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle explorer@1.6.1~prestart: explorer@1.6.1
+6 silly lifecycle explorer@1.6.1~prestart: no script for prestart, continuing
+7 info lifecycle explorer@1.6.1~start: explorer@1.6.1
+8 verbose lifecycle explorer@1.6.1~start: unsafe-perm in lifecycle true
+9 verbose lifecycle explorer@1.6.1~start: PATH: /usr/share/npm/bin/node-gyp-bin:/root/explorer/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+10 verbose lifecycle explorer@1.6.1~start: CWD: /root/explorer
+11 silly lifecycle explorer@1.6.1~start: Args: [ '-c', 'node --stack-size=10000 ./bin/cluster "./"' ]
+12 verbose stack Error: write EPIPE
+12 verbose stack     at Object.exports._errnoException (util.js:870:11)
+12 verbose stack     at exports._exceptionWithHostPort (util.js:893:20)
+12 verbose stack     at WriteWrap.afterWrite (net.js:763:14)
+13 verbose cwd /root/explorer
+14 error Linux 4.4.0-042stab127.2
+15 error argv "/usr/bin/nodejs" "/usr/bin/npm" "start" "./"
+16 error node v4.2.6
+17 error npm  v3.5.2
+18 error code EPIPE
+19 error errno EPIPE
+20 error syscall write
+21 error write EPIPE
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]
