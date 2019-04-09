@@ -305,6 +305,7 @@ router.get('/ext/summary', function(req, res) {
               difficulty: difficulty,
               difficultyHybrid: difficultyHybrid,
               supply: stats.supply,
+			  supplyusd: stats.supplyusd,
               hashrate: hashrate,
               lastPrice: stats.last_price,
               connections: connections,

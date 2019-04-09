@@ -27,6 +27,7 @@ html
         function update_stats(){   
           $.ajax({url: '/ext/summary', success: function(json){
             $("#supply").text(json.data[0].supply);
+            $("#supplyusd").text(json.data[0].supplyusd);
             $("#difficulty").text(json.data[0].difficulty);
             $("#difficultyHybrid").text(json.data[0].difficultyHybrid);
             $("#hashrate").text(json.data[0].hashrate);
@@ -131,17 +132,17 @@ html
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
               if settings.nethash_units == 'K'
-                strong #{settings.locale.network} (KC/s)
+                strong #{settings.locale.network} (KH/s)
               else if settings.nethash_units == 'M'
-                strong #{settings.locale.network} (MC/s)
+                strong #{settings.locale.network} (MH/s)
               else if settings.nethash_units == 'G'
-                strong #{settings.locale.network} (GC/s)
+                strong #{settings.locale.network} (GH/s)
               else if settings.nethash_units == 'T'
-                strong #{settings.locale.network} (TC/s)
+                strong #{settings.locale.network} (TH/s)
               else if settings.nethash_units == 'P'
-                strong #{settings.locale.network} (PC/s)
+                strong #{settings.locale.network} (PH/s)
               else if settings.nethash_units == 'H'
-                strong #{settings.locale.network} (C/s)
+                strong #{settings.locale.network} (H/s)
             .panel-body
               if settings.index.difficulty == 'Hybrid'
                label#hashrate - 
@@ -176,14 +177,14 @@ html
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong #{settings.markets.exchange} Price
+              strong #{settings.locale.ex_supply} (#{settings.symbolusd})
             .panel-body
               if settings.index.difficulty == 'Hybrid'
-               label#lastPrice -
+               label#supplyusd - 
                <br>
                label#lblX1
               else
-               label#lastPrice - 
+               label#supplyusd -  
                  
       .row.text-center(style='margin-top:10px;margin-bottom:20px;')
         form.form-inline(method='post', action='/search')      

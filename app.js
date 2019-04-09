@@ -52,8 +52,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', bitcoinapi.app);
 app.use('/', routes);
 app.use('/ext/getmoneysupply', function(req,res){
-  lib.get_supply(function(supply){
+  lib.get_supply(function(supply,supplyusd){
     res.send(' '+supply);
+  });
+});
+app.use('/ext/getmoneysupplyusd', function(req,res){
+  lib.get_supply(function(supply,supplyusd){
+    res.send(' '+supplyusd);
   });
 });
 
@@ -84,7 +89,7 @@ app.use('/ext/getbalance/:hash', function(req,res){
   });
 });
 
-app.use('/ext/getdistribution', function(req,res){
+/*app.use('/ext/getdistribution', function(req,res){
   db.get_richlist(settings.coin, function(richlist){
     db.get_stats(settings.coin, function(stats){
       db.get_distribution(richlist, stats, function(dist){
@@ -92,7 +97,7 @@ app.use('/ext/getdistribution', function(req,res){
       });
     });
   });
-});
+});*/
 
 app.use('/ext/getlasttxs/:min', function(req,res){
   db.get_last_txs(settings.index.last_txs, (req.params.min * 100000000), function(txs){
@@ -109,6 +114,7 @@ app.use('/ext/connections', function(req,res){
 // locals
 app.set('title', settings.title);
 app.set('symbol', settings.symbol);
+app.set('symbolusd', settings.symbolusd);
 app.set('coin', settings.coin);
 app.set('locale', locale);
 app.set('display', settings.display);
