@@ -23,7 +23,7 @@ block content
             tr.success
                 td #{confirms}
                 td.hidden-xs 
-                  a(href='/block/#{tx.blockhash}') #{tx.blockhash}
+                  a(href='/block/#{tx.blockhash}', style='word-break: break-all;') #{tx.blockhash}
                 td #{time}
                 td.view_tx  
                   a(href='/block/#{tx.blockhash}')
@@ -33,19 +33,19 @@ block content
               tr.danger
                 td #{confirms}
                 td.hidden-xs  
-                  a(href='/block/#{tx.blockhash}') #{tx.blockhash}
+                  a(href='/block/#{tx.blockhash}', style='word-break: break-all;') #{tx.blockhash}
                 td #{time}
                 td.view_tx  
-                  a(href='/block/#{tx.blockhash}')
+                  a(href='/block/#{tx.blockhash}', style='word-break: break-all;')
                     span.glyphicon.glyphicon-eye-open 
             else
               tr.warning
                 td #{confirms}
                 td.hidden-xs  
-                  a(href='/block/#{tx.blockhash}') #{tx.blockhash}
+                  a(href='/block/#{tx.blockhash}', style='word-break: break-all;') #{tx.blockhash}
                 td #{time}
                 td.view_tx  
-                  a(href='/block/#{tx.blockhash}')
+                  a(href='/block/#{tx.blockhash}', style='word-break: break-all;')
                     span.glyphicon.glyphicon-eye-open
     if tx.vout.length < 1
       .alert.alert-info(role='alert', style='text-align:center;')   
@@ -74,7 +74,7 @@ block content
                       - var ramount = r.amount / 100000000
                       tr
                         td 
-                          a.loading(href='/address/#{r.addresses}') 
+                          a.loading(href='/address/#{r.addresses}', style='word-break: break-all;') 
                             =r.addresses
                         td.danger.hidden-xs #{ramount.toFixed(8)}
                       tr.hidden-lg.hidden-md
@@ -97,7 +97,7 @@ block content
                     - var ramount = r.amount / 100000000  
                     tr
                       td 
-                        a.loading(href='/address/#{r.addresses}') 
+                        a.loading(href='/address/#{r.addresses}', style='word-break: break-all;') 
                           =r.addresses 
                       if r.currency == 0 
                         td.success.hidden-xs  #{ramount.toFixed(8)} #{settings.symbol}

@@ -149,7 +149,7 @@ html
                <br>
                label#lblX1  
               else  
-               label#hashrate - 
+               label(style='word-break: break-all;')#hashrate - 
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
@@ -160,7 +160,7 @@ html
                <br>
                label#difficultyHybrid -
               else
-               label#difficulty -
+               label(style='word-break: break-all;')#difficulty -
         .col-md-2.col-sm-12
           img(src='#{settings.logo}', style='margin-top:-15px;height:128px;')
         .col-md-2
@@ -173,7 +173,7 @@ html
                <br>
                label#lblX1
               else
-               label#supply -  
+               label(style='word-break: break-all;')#supply -  
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
@@ -184,7 +184,7 @@ html
                <br>
                label#lblX1
               else
-               label#supplyusd -  
+               label(style='word-break: break-all;')#supplyusd -  
                  
       .row.text-center(style='margin-top:10px;margin-bottom:20px;')
         form.form-inline(method='post', action='/search')      
